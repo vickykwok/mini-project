@@ -5,58 +5,8 @@ const ObjectID = require('mongodb').ObjectID;
 const assert = require('assert');
 const fs = require('fs');
 const formidable = require('express-formidable');
-const mongourl = '';
+const mongourl = 'mongodb+srv://vickykwok:vickykwok@cluster0.o5cyu.mongodb.net/test?retryWrites=true&w=majority';
 const dbName = 'test';
-
-const SECRETKEY = 'I want to pass COMPS381F';
-
-const users = new Array(
-	{name: 'demo', password: ''},
-	{name: 'student', password: ''}
-);
-
-app.set('view engine','ejs');
-
-app.use(session({
-  name: 'loginSession',
-  keys: [SECRETKEY]
-}));
-
-// support parsing of application/json type post data
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-
-app.get('/', (req,res) => {
-	console.log(req.session);
-	if (!req.session.authenticated) {    // user not logged in!
-		res.redirect('/login');
-	} else {
-		res.status(200).render('secrets','details','find','update',{name:req.session.username});
-	}
-});
-
-app.get('/login', (req,res) => {
-	res.status(200).render('login',{});
-});
-
-app.post('/login', (req,res) => {
-	users.forEach((user) => {
-		if (user.name == req.body.name && user.password == req.body.password) {
-			// correct user name + password
-			// store the following name/value pairs in cookie session
-			req.session.authenticated = true;        // 'authenticated': true
-			req.session.username = req.body.name;	 // 'username': req.body.name		
-		}
-	});
-	res.redirect('/');
-});
-
-app.get('/logout', (req,res) => {
-	req.session = null;   // clear cookie-session
-	res.redirect('/');
-});
-
-////
 
 app.use(formidable());
 app.set('view engine', 'ejs');
