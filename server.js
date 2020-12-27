@@ -5,7 +5,7 @@ const ObjectID = require('mongodb').ObjectID;
 const assert = require('assert');
 const fs = require('fs');
 const formidable = require('express-formidable');
-const mongourl = 'mongodb+srv://vickykwok:vickykwok@cluster0.o5cyu.mongodb.net/test?retryWrites=true&w=majority';
+const mongourl = '';
 const dbName = 'test';
 
 app.use(formidable());
