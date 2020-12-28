@@ -55,7 +55,7 @@ app.post('/login', (req,res) => {
 	res.redirect('/find');
 });
 
-//create new restuarant information
+//create/add new restuarant information for the empty collection--'restaurant'
 const insertDocument = (db, doc, res, callback) => {
     db.collection('restaurant').
     insertOne(doc, (err, results) => {//
