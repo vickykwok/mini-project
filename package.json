@@ -1,0 +1,21 @@
+{
+    "name": "server",
+    "description": "example",
+    "author": "Kwok Yuk Kei <s1247073@ouhk.edu.hk>",
+    "version": "0.0.1",
+    "dependencies": {
+        "body-parser": "*",
+        "cnpm": "^6.1.1",
+        "cookie-session": "*",
+        "ejs": "^3.1.5",
+        "express": "^4.17.1",
+        "express-formidable": "^1.2.0",
+        "formidable": "1.2.2",
+        "mongodb": "3.1",
+        "mongoose": "^4.13.20"
+    },
+    "engine": "node >= 12.10.0",
+    "scripts": {
+        "start": "node server"
+    }
+}
